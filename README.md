@@ -1,6 +1,10 @@
 # UITapLabel
 A subclass of UILabel, support to tap the specified text.
 
+**Tap opertaion accurates to pixel.**
+
+![](./1.gif)
+
 # Use
 
 - Set `userInteractionEnabled` to YES. (This is necessary)
@@ -38,6 +42,8 @@ And then implement required method of `UITapLabelDelegate`.
 ```
 
 Also see my sample code: [ViewController](./UITapLabelDemo/UITapLabelDemo/ViewController.m)
+
+**To look like URL string, you can set attribute string to property attributedString.**
 
 # Requirement
 
