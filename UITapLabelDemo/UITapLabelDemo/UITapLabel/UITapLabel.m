@@ -28,10 +28,11 @@
     CGFloat sum = 0;
     unichar letter;
     NSString *letterStr;
+    NSDictionary *attribute = @{NSFontAttributeName : self.font ?: [UIFont systemFontOfSize:17]};
     for (int i=0; i<length; i++) {
         letter    = [self.text characterAtIndex:i];
         letterStr = [NSString stringWithCharacters:&letter length:1];
-        sum += [letterStr sizeWithAttributes:@{NSFontAttributeName : self.font ?: [UIFont systemFontOfSize:17]}].width;
+        sum += [letterStr sizeWithAttributes:attribute].width;
         if (sum >= pos.x) {
             [self triggerWithIndex:i];
             break;
