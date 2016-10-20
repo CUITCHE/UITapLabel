@@ -29,9 +29,9 @@ Just like below code:
 And then implement required method of `UITapLabelDelegate`.
 
 ```objective-c
-- (void)tapLabel:(UITapLabel *)label tapCharacterAtIndex:(NSUInteger)index
-                                         withLinkContent:(NSString *)content
-                                             ofLinkRange:(NSRange)linkRange
+- (void)tapLabel:(UITapLabel *)label didTapCharacterAtIndex:(NSUInteger)index
+                                            withLinkContent:(NSString *)content
+                                                ofLinkRange:(NSRange)linkRange
 {
     UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"Message"
                                                                    message:content
