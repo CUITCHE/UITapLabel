@@ -43,7 +43,7 @@ And then implement required method of `UITapLabelDelegate`.
 
 Also see my sample code: [ViewController](./UITapLabelDemo/UITapLabelDemo/ViewController.m)
 
-**To look like URL string, you can set attribute string to property attributedString.**
+**To look like URL string, you can set attribute string to property attributedText.**
 
 # Requirement
 
