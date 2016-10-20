@@ -33,9 +33,9 @@
 }
 
 #pragma mark - UITapLabelDelegate
-- (void)tapLabel:(UITapLabel *)label tapCharacterAtIndex:(NSUInteger)index
-                                         withLinkContent:(NSString *)content
-                                             ofLinkRange:(NSRange)linkRange
+- (void)tapLabel:(UITapLabel *)label didTapCharacterAtIndex:(NSUInteger)index
+                                            withLinkContent:(NSString *)content
+                                                ofLinkRange:(NSRange)linkRange
 {
     UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"Message"
                                                                    message:content

@@ -44,9 +44,9 @@
     for (NSValue *v in self.linkRanges) {
         NSRange range = v.rangeValue;
         if (NSLocationInRange(index, range)) {
-            [_delegate tapLabel:self tapCharacterAtIndex:index
-                                         withLinkContent:[self.text substringWithRange:range]
-                                             ofLinkRange:range];
+            [_delegate tapLabel:self didTapCharacterAtIndex:index
+                                            withLinkContent:[self.text substringWithRange:range]
+                                                ofLinkRange:range];
         }
     }
 }
@@ -55,7 +55,18 @@
 - (void)setDelegate:(id<UITapLabelDelegate>)delegate
 {
     _delegate = delegate;
-    self.delegateResponed = [_delegate respondsToSelector:@selector(tapLabel:tapCharacterAtIndex:withLinkContent:ofLinkRange:)];
+    self.delegateResponed = [_delegate respondsToSelector:@selector(tapLabel:didTapCharacterAtIndex:withLinkContent:ofLinkRange:)];
 }
 
+#pragma mark - override
+- (void)addGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+{
+#ifdef DEBUG
+    @throw [NSException exceptionWithName:NSGenericException
+                                   reason:@"Should not add gesture to UITapLabel. that will make tap invalid."
+                                 userInfo:nil];
+#else
+    [super addGestureRecognizer:gestureRecognizer];
+#endif
+}
 @end

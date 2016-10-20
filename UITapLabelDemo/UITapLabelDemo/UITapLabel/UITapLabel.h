@@ -29,8 +29,8 @@
  @param content   The sub string of label's text in triggered range.
  @param linkRange Triggered range which property linkRanges contained.
  */
-- (void)tapLabel:(UITapLabel *)label tapCharacterAtIndex:(NSUInteger)index
-                                         withLinkContent:(NSString *)content
-                                             ofLinkRange:(NSRange)linkRange;
+- (void)tapLabel:(UITapLabel *)label didTapCharacterAtIndex:(NSUInteger)index
+                                            withLinkContent:(NSString *)content
+                                                ofLinkRange:(NSRange)linkRange;
 
 @end
